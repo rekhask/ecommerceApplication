@@ -44,7 +44,12 @@ public class ItemControllerTest {
         itemController = new ItemController();
         TestUtils.injectObjects(itemController, "itemRepository", itemRepo);
         item1 = new Item (1L,"Round Widget",  new BigDecimal(2.99), "A widget that is round");
-        item2 = new Item (2L,"Square Widget",  new BigDecimal(1.99), "A widget that is square");
+        //item2 = new Item (2L,"Square Widget",  new BigDecimal(1.99), "A widget that is square");
+        item2 = new Item();
+        item2.setId(2L);
+        item2.setName("Square Widget");
+        item2.setDescription("A widget that is square");
+
     }
 
     @Test
@@ -66,6 +71,7 @@ public class ItemControllerTest {
         assertNotNull(res);
         assertEquals(200, res.getStatusCodeValue());
         Item items1Res = res.getBody();
+
         assertEquals("Round Widget", items1Res.getName());
         assertEquals("A widget that is round", items1Res.getDescription());
     }

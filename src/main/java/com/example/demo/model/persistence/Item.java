@@ -98,7 +98,7 @@ public class Item {
 		this.price = price;
 		this.description = description;
 	}
-	
+	public Item () {}
 	
 	
 }

@@ -42,7 +42,7 @@ public class UserControllerTest {
     private String hashedPwd;
 
     @Before
-    public  void setUp() {
+    public void setUp() {
         userController = new UserController();
         TestUtils.injectObjects(userController, "userRepository", userRepo);
         TestUtils.injectObjects(userController, "cartRepository", cartRepo);
