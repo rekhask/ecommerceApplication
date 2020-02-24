@@ -3,13 +3,12 @@ pipeline {
 
     tools {
          maven 'maven_3_6_3'
+         jdk 'jdk8'
     }
     stages {
         stage('build') {
             steps {
-                withMaven ('maven_3_6_3') {
-                    sh 'mvn clean compile'
-                }
+                sh 'mvn clean compile'
             }
         }
     }
