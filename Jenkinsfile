@@ -5,9 +5,14 @@ pipeline {
          maven 'maven_3_6_3'
     }
     stages {
-        stage('build') {
+        stage('Build Stage') {
             steps {
                 bat 'mvn clean compile'
+            }
+        }
+        stage('Testing Stage') {
+            steps {
+                bat 'mvn test'
             }
         }
     }
